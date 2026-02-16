@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Bitcoin, Github, ChevronRight, Cpu, Globe, Zap, Target, Database, Terminal } from "lucide-react";
+import { Bitcoin, Github, ChevronRight, Cpu, Globe, Zap, Target, Database, Terminal, Shield } from "lucide-react";
 import { Background } from "@/components/landing/Background";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";

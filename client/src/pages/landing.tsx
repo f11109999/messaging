@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Bitcoin, Github, ChevronRight, Cpu, Globe, Zap, Target, Database, Terminal, Shield } from "lucide-react";
+import { useLocation } from "wouter";
 import { Background } from "@/components/landing/Background";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -7,14 +8,11 @@ import cloverRealistic from "@/assets/clover-realistic.png";
 import shieldIcon from "@/assets/shield-icon.png";
 import lockIcon from "@/assets/lock-icon.png";
 import codeIcon from "@/assets/code-icon.png";
-
-const MoneroIcon = () => (
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" className="mr-2">
-    <path d="M22.5 19V9.5L18.5 13.5V19H22.5ZM1.5 19V9.5L5.5 13.5V19H1.5ZM12 11.5L8 15.5H6.5V20.5H4.5V12.5L12 5L19.5 12.5V20.5H17.5V15.5H16L12 11.5Z" />
-  </svg>
-);
+import moneroIcon from "@/assets/dsadasd.png";
 
 export default function Landing() {
+  const [, setLocation] = useLocation();
+
   return (
     <div className="min-h-screen bg-[#050505] text-foreground font-sans selection:bg-primary/20 overflow-x-hidden">
       <Background />
@@ -181,6 +179,7 @@ export default function Landing() {
               <Button 
                 variant="ghost" 
                 className="group text-muted-foreground hover:text-primary hover:bg-white/[0.02] transition-all border border-white/5 hover:border-primary/30 rounded-full px-8 h-12"
+                onClick={() => setLocation("/bitcoin")}
               >
                 <Bitcoin className="w-4 h-4 mr-3 text-orange-500 group-hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.5)]" />
                 <span className="text-sm font-medium">Bitcoin Support</span>
@@ -188,8 +187,9 @@ export default function Landing() {
               <Button 
                 variant="ghost" 
                 className="group text-muted-foreground hover:text-primary hover:bg-white/[0.02] transition-all border border-white/5 hover:border-primary/30 rounded-full px-8 h-12"
+                onClick={() => setLocation("/monero")}
               >
-                <MoneroIcon />
+                <img src={moneroIcon} alt="Monero" className="w-4 h-4 mr-2" />
                 <span className="text-sm font-medium text-[#FF6600]">Monero Support</span>
               </Button>
             </div>

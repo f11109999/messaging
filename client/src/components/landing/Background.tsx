@@ -6,26 +6,25 @@ export function Background() {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll();
   
-  // Generate more clovers for a longer page
-  const clovers = Array.from({ length: 12 }).map((_, i) => ({
+  const clovers = Array.from({ length: 15 }).map((_, i) => ({
     id: i,
     x: Math.random() * 100,
-    y: Math.random() * 300, // Spread over longer vertical space
-    scale: 0.3 + Math.random() * 1.2,
-    duration: 15 + Math.random() * 25,
+    y: Math.random() * 400, 
+    scale: 0.4 + Math.random() * 1.4,
+    duration: 20 + Math.random() * 30,
     delay: Math.random() * 10,
-    parallaxSpeed: 50 + Math.random() * 150,
+    parallaxSpeed: 80 + Math.random() * 200,
   }));
 
   return (
     <div ref={containerRef} className="fixed inset-0 z-0 overflow-hidden pointer-events-none">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(34,197,94,0.08),transparent_50%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(34,197,94,0.12),transparent_60%)]" />
       
       {clovers.map((clover) => (
         <FloatingClover key={clover.id} clover={clover} scrollYProgress={scrollYProgress} />
       ))}
       
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(34,197,94,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(34,197,94,0.02)_1px,transparent_1px)] bg-[size:5rem_5rem] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_50%,#000_60%,transparent_100%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(34,197,94,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(34,197,94,0.03)_1px,transparent_1px)] bg-[size:6rem_6rem] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_50%,#000_60%,transparent_100%)]" />
     </div>
   );
 }
@@ -35,7 +34,7 @@ function FloatingClover({ clover, scrollYProgress }: { clover: any, scrollYProgr
   
   return (
     <motion.div
-      className="absolute opacity-[0.04] blur-[2px]"
+      className="absolute opacity-[0.06] blur-[1px]"
       style={{ 
         left: `${clover.x}vw`, 
         top: `${clover.y}vh`,
@@ -55,7 +54,7 @@ function FloatingClover({ clover, scrollYProgress }: { clover: any, scrollYProgr
       <img 
         src={cloverRealistic} 
         alt="" 
-        className="w-48 h-48 object-contain brightness-150" 
+        className="w-56 h-56 object-contain brightness-150 drop-shadow-[0_0_20px_rgba(34,197,94,0.4)]" 
       />
     </motion.div>
   );

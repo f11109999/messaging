@@ -84,7 +84,7 @@ export default function Landing() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="flex flex-col sm:flex-row gap-6 w-full justify-center"
           >
-            <Button size="lg" className="bg-primary text-black hover:bg-primary/90 font-bold px-10 h-16 text-lg rounded-full shadow-[0_0_50px_-5px_rgba(34,197,94,0.6)] transition-all hover:scale-105 active:scale-95">
+            <Button size="lg" className="bg-primary text-white hover:bg-primary/90 font-bold px-10 h-16 text-lg rounded-full shadow-[0_0_40px_-5px_rgba(21,128,61,0.4)] transition-all hover:scale-105 active:scale-95">
               Get Started <ChevronRight className="ml-2 w-5 h-5" />
             </Button>
             <Button size="lg" variant="outline" className="border-primary/20 hover:bg-primary/5 h-16 px-10 text-lg rounded-full backdrop-blur-md hover:border-primary/40 transition-all text-white">

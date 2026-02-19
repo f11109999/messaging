@@ -95,54 +95,44 @@ export default function Landing() {
 
         {/* Bulletproof Hosting Section */}
         <section id="sovereignty" className="container mx-auto px-6 mb-48">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="space-y-8"
-            >
-              <div className="inline-flex items-center gap-2 text-primary text-xs font-mono uppercase tracking-widest px-3 py-1 rounded bg-primary/10 border border-primary/20">
-                <Server className="w-3 h-3" /> Bulletproof Infrastructure
+          <div className="max-w-4xl mx-auto border border-primary/20 rounded-[3rem] p-12 md:p-20 bg-primary/[0.02] backdrop-blur-3xl relative overflow-hidden group">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 blur-[100px] -z-10 group-hover:bg-primary/10 transition-colors duration-700" />
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-primary/5 blur-[100px] -z-10 group-hover:bg-primary/10 transition-colors duration-700" />
+            
+            <div className="flex flex-col items-center text-center space-y-10">
+              <div className="inline-flex items-center gap-2 text-primary text-xs font-mono uppercase tracking-widest px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20">
+                <Server className="w-3.5 h-3.5" /> Bulletproof Infrastructure
               </div>
-              <h2 className="text-4xl md:text-6xl font-bold font-display leading-tight text-white">Lithuanian <br /><span className="text-primary italic">Digital Sovereignty.</span></h2>
-              <p className="text-lg text-muted-foreground font-light leading-relaxed">
+              
+              <h2 className="text-4xl md:text-7xl font-bold font-display leading-[1.1] text-white">
+                Lithuanian <br />
+                <span className="text-primary italic tracking-tight">Digital Sovereignty.</span>
+              </h2>
+              
+              <p className="text-lg md:text-xl text-muted-foreground font-light leading-relaxed max-w-2xl">
                 Our core infrastructure is physically located in high-security, off-grid Lithuanian bunkers. We operate under a strict jurisdictional policy that ignores DMCA requests, foreign court orders, and cross-border data subpoenas.
               </p>
-              <ul className="space-y-4">
+              
+              <div className="grid sm:grid-cols-3 gap-6 w-full pt-8">
                 {[
                   { icon: Gavel, text: "Zero compliance with foreign DMCA/Court orders" },
                   { icon: EyeOff, text: "Physical air-gapped node architecture" },
                   { icon: Shield, text: "Bunker-grade hardware security modules" }
                 ].map((item, i) => (
-                  <li key={i} className="flex items-center gap-4 text-white/80">
-                    <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
-                      <item.icon className="w-4 h-4" />
+                  <div key={i} className="flex flex-col items-center gap-4 p-6 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-primary/30 transition-all duration-500">
+                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-2">
+                      <item.icon className="w-6 h-6" />
                     </div>
-                    <span className="text-sm font-medium">{item.text}</span>
-                  </li>
+                    <span className="text-sm font-medium text-white/80 leading-snug">{item.text}</span>
+                  </div>
                 ))}
-              </ul>
-            </motion.div>
-            
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              className="relative aspect-square rounded-[3rem] overflow-hidden border border-primary/20 group"
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent z-10" />
-              <div className="absolute inset-0 bg-black/40 z-20 group-hover:bg-black/20 transition-all duration-700" />
-              <img 
-                src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=2000" 
-                alt="High security data center" 
-                className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-700" 
-              />
-              <div className="absolute bottom-10 left-10 z-30 space-y-2">
-                <div className="text-white font-bold text-2xl tracking-tighter">BUNKER_NODE_01</div>
-                <div className="text-primary font-mono text-xs uppercase tracking-[0.3em]">Vilnius, Lithuania [SECURE]</div>
               </div>
-            </motion.div>
+              
+              <div className="pt-8 flex items-center gap-3">
+                <div className="w-2 h-2 rounded-full bg-primary animate-pulse shadow-[0_0_10px_#15803d]" />
+                <span className="text-primary font-mono text-xs uppercase tracking-[0.4em]">Vilnius, Lithuania [SECURE_NODE_01]</span>
+              </div>
+            </div>
           </div>
         </section>
 
